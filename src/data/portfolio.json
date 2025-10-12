@@ -1,0 +1,38 @@
+{
+"categories": [
+{
+"title": "Home Snap",
+"subtitle": "감성 홈스냅",
+"cover": "/images/cat-home.jpg"
+},
+{
+"title": "야외촬영",
+"subtitle": "자연광 스냅",
+"cover": "/images/cat-outdoor.jpg"
+},
+{
+"title": "Original",
+"subtitle": "시그니처 보정",
+"cover": "/images/cat-original.jpg"
+},
+{
+"title": "어린이 프로젝트",
+"subtitle": "돌/키즈",
+"cover": "/images/cat-kids.jpg"
+}
+],
+"gallery": [
+"/images/g1.jpg",
+"/images/g2.jpg",
+"/images/g3.jpg",
+"/images/g4.jpg",
+"/images/g5.jpg",
+"/images/g6.jpg",
+"/images/g7.jpg",
+"/images/g8.jpg",
+"/images/g9.jpg",
+"/images/g10.jpg",
+"/images/g11.jpg",
+"/images/g12.jpg"
+]
+}
