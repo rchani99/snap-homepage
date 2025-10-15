@@ -46,7 +46,6 @@ type About = {
 /* JSON import을 명시적 타입으로 단언 */
 const services = servicesData as Service[];
 const reviews = reviewsData as Review[];
-const portfolio = portfolioData as Portfolio;
 const about = aboutData as About;
 
 /* 카카오 채널 URL — 배포 시 환경변수로 교체 권장 */
@@ -108,11 +107,8 @@ function Header() {
   }, []);
 
   const nav = [
-    { href: '#portfolio', label: '포트폴리오' },
-    { href: '#services', label: '서비스/가격' },
-    { href: '#about', label: '작가소개' },
-    { href: '#reviews', label: '리뷰' },
-    { href: KAKAO_CHANNEL_CHAT_URL, label: '카카오 예약', external: true },
+    { href: 'portfolio', label: '포트폴리오' },
+    { href: 'services', label: '상품 안내' },
   ];
 
   return (
@@ -130,8 +126,8 @@ function Header() {
             <a
               key={n.label}
               href={n.href}
-              target={n.external ? '_blank' : undefined}
-              rel={n.external ? 'noopener noreferrer' : undefined}
+              // target={n.external ? '_blank' : undefined}
+              // rel={n.external ? 'noopener noreferrer' : undefined}
               className="text-gray-700 hover:text-black"
             >
               {n.label}
@@ -161,8 +157,8 @@ function Header() {
                   <a
                     className="block py-3 text-base text-gray-800"
                     href={n.href}
-                    target={n.external ? '_blank' : undefined}
-                    rel={n.external ? 'noopener noreferrer' : undefined}
+                    // target={n.external ? '_blank' : undefined}
+                    // rel={n.external ? 'noopener noreferrer' : undefined}
                     onClick={() => setOpen(false)}
                   >
                     {n.label}
@@ -207,24 +203,13 @@ function Hero() {
       <Container className="relative h-full">
         <div className="flex h-full flex-col items-start justify-end pb-14 md:pb-24">
           <motion.div initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: 0.2 }} className="max-w-2xl text-white">
-            <p className="mb-2 text-sm tracking-widest uppercase">Snap Photography Studio</p>
-            <h1 className="text-4xl md:text-6xl font-semibold leading-tight">{about.headline}</h1>
-            <p className="mt-4 text-white/90">웨딩 · 커플 · 패밀리 · 돌스냅 · 데이 이벤트까지, 일상의 찰나를 작품처럼.</p>
-            <div className="mt-8 grid grid-cols-1 sm:flex sm:flex-wrap gap-3">
-              <Button href="#portfolio">
-                포트폴리오 보기 <ChevronRight className="h-4 w-4" />
-              </Button>
-              <Button href={KAKAO_CHANNEL_CHAT_URL} className="bg-white text-black sm:w-auto w-full">
-                카카오톡으로 예약
-              </Button>
-            </div>
           </motion.div>
         </div>
       </Container>
     </section>
   );
 }
-
+/*
 function CategoryGrid() {
   return (
     <section id="portfolio" className="py-16 md:py-24">
@@ -251,17 +236,18 @@ function CategoryGrid() {
     </section>
   );
 }
+  */
 
 function Gallery() {
   return (
     <section className="py-12">
       <Container>
         <div className="columns-1 sm:columns-2 lg:columns-3 gap-4 [column-fill:_balance]">
-          {portfolio.gallery.map((src, i) => (
+          {/* {portfolio.gallery.map((src, i) => (
             <div key={i} className="mb-4 break-inside-avoid">
               <Image src={src} alt={`gallery-${i}`} width={1200} height={1600} className="w-full h-auto rounded-2xl shadow" sizes="(max-width:640px) 100vw, (max-width:1024px) 50vw, 33vw" priority={i < 3} />
             </div>
-          ))}
+          ))} */}
         </div>
       </Container>
     </section>
@@ -369,22 +355,7 @@ function Footer() {
               </li>
               <li>
                 <a href="#services" className="hover:text-black">
-                  서비스/가격
-                </a>
-              </li>
-              <li>
-                <a href="#about" className="hover:text-black">
-                  작가소개
-                </a>
-              </li>
-              <li>
-                <a href="#reviews" className="hover:text-black">
-                  리뷰
-                </a>
-              </li>
-              <li>
-                <a href={KAKAO_CHANNEL_CHAT_URL} target="_blank" rel="noopener noreferrer" className="hover:text-black">
-                  카카오 예약
+                  상품 안내
                 </a>
               </li>
             </ul>
@@ -412,9 +383,9 @@ function Footer() {
 export default function Page() {
   return (
     <div className="font-[ui-sans-serif] antialiased text-gray-900">
-      <Header />
+      {/* <Header /> */}
       <Hero />
-      <CategoryGrid />
+      {/* <CategoryGrid /> */}
       <Gallery />
       <ServicesSection />
       <AboutSection />

@@ -1,38 +1,25 @@
 {
-"categories": [
-{
-"title": "Home Snap",
-"subtitle": "감성 홈스냅",
-"cover": "/images/cat-home.jpg"
-},
-{
-"title": "야외촬영",
-"subtitle": "자연광 스냅",
-"cover": "/images/cat-outdoor.jpg"
-},
-{
-"title": "Original",
-"subtitle": "시그니처 보정",
-"cover": "/images/cat-original.jpg"
-},
-{
-"title": "어린이 프로젝트",
-"subtitle": "돌/키즈",
-"cover": "/images/cat-kids.jpg"
-}
-],
-"gallery": [
-"/images/g1.jpg",
-"/images/g2.jpg",
-"/images/g3.jpg",
-"/images/g4.jpg",
-"/images/g5.jpg",
-"/images/g6.jpg",
-"/images/g7.jpg",
-"/images/g8.jpg",
-"/images/g9.jpg",
-"/images/g10.jpg",
-"/images/g11.jpg",
-"/images/g12.jpg"
-]
+  "categories": [
+    {
+      "slug": "dolsnap",
+      "title": "돌스냅",
+      "subtitle": "아이와 가족의 소중한 순간을 담는 돌스냅",
+      "cover": "/images/cat-dolsnap.jpg"
+    },
+    {
+      "slug": "outdoor",
+      "title": "야외스냅",
+      "subtitle": "자연광을 살린 야외/커플 촬영",
+      "cover": "/images/cat-outdoor.jpg"
+    }
+  ],
+  "gallery": [
+    { "src": "/images/d1.jpg", "alt": "돌스냅1", "category": "dolsnap" },
+    { "src": "/images/d2.jpg", "alt": "돌스냅2", "category": "dolsnap" },
+    { "src": "/images/d3.jpg", "alt": "돌스냅3", "category": "dolsnap" },
+
+    { "src": "/images/o1.jpg", "alt": "야외스냅1", "category": "outdoor" },
+    { "src": "/images/o2.jpg", "alt": "야외스냅2", "category": "outdoor" },
+    { "src": "/images/o3.jpg", "alt": "야외스냅3", "category": "outdoor" }
+  ]
 }
