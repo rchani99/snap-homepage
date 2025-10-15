@@ -3,11 +3,11 @@
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { ChevronRight, Phone, Mail, Instagram, MapPin } from 'lucide-react';
+import { Phone, Mail, Instagram, MapPin } from 'lucide-react';
 
 import servicesData from '@/data/services.json';
 import reviewsData from '@/data/reviews.json';
-import portfolioData from '@/data/portfolio.json';
+// import portfolioData from '@/data/portfolio.json';
 import aboutData from '@/data/about.json';
 
 /* ===========================
@@ -32,10 +32,10 @@ type PortfolioCategory = {
   cover: string;
 };
 
-type Portfolio = {
-  categories: PortfolioCategory[];
-  gallery: string[];
-};
+// type Portfolio = {
+//   categories: PortfolioCategory[];
+//   gallery: string[];
+// };
 
 type About = {
   headline: string;
@@ -96,6 +96,7 @@ function Button({ children, href, onClick, className = '', target, rel }: Button
 
 const heroImages = ['/images/hero1.jpg', '/images/hero2.jpg', '/images/hero3.jpg'];
 
+/*
 function Header() {
   const [open, setOpen] = useState<boolean>(false);
   const [scrolled, setScrolled] = useState<boolean>(false);
@@ -177,6 +178,7 @@ function Header() {
     </header>
   );
 }
+  */
 
 function Hero() {
   const [index, setIndex] = useState<number>(0);
