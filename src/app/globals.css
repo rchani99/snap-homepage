@@ -3,9 +3,6 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
-}
-
-@theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
@@ -23,4 +20,39 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Masonry (CSS columns) */
+.masonry-columns {
+  column-gap: 4px;
+  /* default 2 columns on small screens */
+  column-count: 2;
+}
+
+@media (min-width: 640px) {
+  .masonry-columns { column-count: 3; }
+}
+@media (min-width: 1024px) {
+  .masonry-columns { column-count: 4; }
+}
+@media (min-width: 1280px) {
+  .masonry-columns { column-count: 5; }
+}
+
+/* 아이템이 컬럼 안에서 분리되지 않도록 */
+.break-inside-avoid {
+  break-inside: avoid;
+  -webkit-column-break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+/* globals.css 맨 아래에 */
+.my-masonry-grid {
+  display: flex;
+  margin-left: -8px; /* gutter와 동일 */
+  width: auto;
+}
+.my-masonry-grid_column {
+  padding-left: 8px; /* gutter와 동일 */
+  background-clip: padding-box;
 }
