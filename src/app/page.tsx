@@ -101,7 +101,7 @@ function Footer() {
       <Container>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
-            <p className="text-lg font-semibold">SNAP STUDIO</p>
+            <p className="text-lg font-semibold">KKYUM SNAP</p>
             <p className="mt-2 text-sm text-gray-600">© 2013–2025 All rights reserved.</p>
             <p className="mt-2 text-sm text-gray-600 flex items-center gap-2">
               <MapPin className="h-4 w-4" /> 서울특별시 ○○구 ○○로 123
@@ -148,7 +148,7 @@ export default function Page() {
       <Hero />
       {/* Masonry Gallery (limit 100) */}
       <section className="pt-6 pb-8">
-        <GalleryMasonry limit={100} gutter={8} />
+        <GalleryMasonry limit={100} />
       </section>
       <Footer />
     </div>

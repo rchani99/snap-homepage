@@ -121,7 +121,7 @@ function Header() {
     >
       <Container className="flex h-16 items-center justify-between">
         <a href="#" className="text-lg font-semibold tracking-tight">
-          SNAP STUDIO
+          KKYUM SNAP
         </a>
 
         <nav className="hidden md:flex items-center gap-6 text-sm">
@@ -346,7 +346,7 @@ function Footer() {
       <Container>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
-            <p className="text-lg font-semibold">SNAP STUDIO</p>
+            <p className="text-lg font-semibold">KKYUM SNAP</p>
             <p className="mt-2 text-sm text-gray-600">© 2013–2025 All rights reserved.</p>
             <p className="mt-2 text-sm text-gray-600 flex items-center gap-2">
               <MapPin className="h-4 w-4" /> 서울특별시 ○○구 ○○로 123

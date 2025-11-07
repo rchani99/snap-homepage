@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "SNAP STUDIO",
+  title: "KK",
   description: "스냅 스튜디오",
 };
 

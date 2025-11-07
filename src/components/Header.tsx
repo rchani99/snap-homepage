@@ -29,7 +29,7 @@ export default function Header() {
     >
       <Container className="flex h-16 items-center justify-between">
         <Link href="/" className="text-lg font-semibold tracking-tight">
-          SNAP STUDIO
+          KKYUM SNAP
         </Link>
 
         <nav className="hidden md:flex items-center gap-6 text-sm">

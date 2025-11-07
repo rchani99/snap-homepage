@@ -14,12 +14,21 @@
     }
   ],
   "gallery": [
-    { "src": "/images/d1.jpg", "alt": "돌스냅1", "category": "dolsnap" },
-    { "src": "/images/d2.jpg", "alt": "돌스냅2", "category": "dolsnap" },
-    { "src": "/images/d3.jpg", "alt": "돌스냅3", "category": "dolsnap" },
-
-    { "src": "/images/o1.jpg", "alt": "야외스냅1", "category": "outdoor" },
-    { "src": "/images/o2.jpg", "alt": "야외스냅2", "category": "outdoor" },
-    { "src": "/images/o3.jpg", "alt": "야외스냅3", "category": "outdoor" }
+    { "src": "/images/d1.jpg", "alt": "돌1", "category": "dolsnap", "w": 800, "h": 532 },
+    { "src": "/images/d2.jpg", "alt": "돌2", "category": "dolsnap", "w": 800, "h": 1200 },
+    { "src": "/images/d3.jpg", "alt": "돌3", "category": "dolsnap", "w": 800, "h": 1200 },
+    { "src": "/images/d4.jpg", "alt": "돌4", "category": "dolsnap", "w": 800, "h": 532 },
+    { "src": "/images/d5.jpg", "alt": "돌5", "category": "dolsnap", "w": 800, "h": 532 },
+    { "src": "/images/d6.jpg", "alt": "돌6", "category": "dolsnap", "w": 800, "h": 1200 },
+    { "src": "/images/d7.jpg", "alt": "돌7", "category": "dolsnap", "w": 800, "h": 532 },
+    { "src": "/images/d8.jpg", "alt": "돌8", "category": "dolsnap", "w": 800, "h": 1200 },
+    { "src": "/images/d9.jpg", "alt": "돌9", "category": "dolsnap", "w": 800, "h": 1800 },
+    { "src": "/images/d10.jpg", "alt": "돌10", "category": "dolsnap", "w": 800, "h": 532 },
+    { "src": "/images/d11.jpg", "alt": "돌11", "category": "dolsnap", "w": 800, "h": 532 },
+    { "src": "/images/d12.jpg", "alt": "돌12", "category": "dolsnap", "w": 800, "h": 1800 }, 
+    { "src": "/images/o1.jpg", "alt": "야외1", "category": "outdoor", "w": 1600, "h": 1067 },
+    { "src": "/images/o2.jpg", "alt": "야외2", "category": "outdoor", "w": 1200, "h": 1600 },
+    { "src": "/images/o3.jpg", "alt": "야외3", "category": "outdoor", "w": 1500, "h": 1000 }
   ]
 }
+
