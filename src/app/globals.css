@@ -1,12 +1,39 @@
 @import "tailwindcss";
 
+/* ----------------------------
+   Gmarket Sans (local woff)
+----------------------------- */
+@font-face {
+  font-family: 'GmarketSans';
+  src: url('/fonts/GmarketSans/GmarketSansLight.woff') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'GmarketSans';
+  src: url('/fonts/GmarketSans/GmarketSansMedium.woff') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'GmarketSans';
+  src: url('/fonts/GmarketSans/GmarketSansBold.woff') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ----------------------------
+   색상/변수 설정
+----------------------------- */
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #4c3126; /* ✅ 여기서 글자색을 통일 */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: 'GmarketSans', Arial, Helvetica, sans-serif;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -16,16 +43,23 @@
   }
 }
 
+/* ----------------------------
+   Body 기본 스타일
+----------------------------- */
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+}
+
+/* 링크는 기본적으로 현재 색을 따라가게 */
+a {
+  color: inherit;
 }
 
 /* Masonry (CSS columns) */
 .masonry-columns {
   column-gap: 4px;
-  /* default 2 columns on small screens */
   column-count: 2;
 }
 
@@ -46,13 +80,13 @@ body {
   page-break-inside: avoid;
 }
 
-/* globals.css 맨 아래에 */
+/* react-masonry-css 용 (쓰고 있다면) */
 .my-masonry-grid {
   display: flex;
-  margin-left: -8px; /* gutter와 동일 */
+  margin-left: -8px;
   width: auto;
 }
 .my-masonry-grid_column {
-  padding-left: 8px; /* gutter와 동일 */
+  padding-left: 8px;
   background-clip: padding-box;
 }

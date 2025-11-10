@@ -1,20 +1,20 @@
 [
 {
-"slug": "basic",
-"name": "베이직",
-"description": "촬영 1시간 / 원본 150컷 / 보정 15컷",
-"price": 250000
+  "slug": "DATA",
+  "name": "DATA",
+  "description": "- 대표 작가 1인 촬영\n- 원본 사진 800컷 이상\n- 보정본 40장\n- 원본 사진 온라인 발송\n- 돌잡이 행사 원본 영상 제공",
+  "price": 250000
 },
 {
-"slug": "standard",
-"name": "스탠다드",
-"description": "촬영 2시간 / 원본 300컷 / 보정 40컷",
+"slug": "FRAME",
+"name": "FRAME",
+"description": "- 대표 작가 1인 촬영\n- 원본 사진 800컷 이상 \n- 보정본 50장 \n- 원본 사진 온라인 발송 \n- 돌잡이 행사 원본 영상 제공\n- 고급 원목 액자 (11×14인치) 2개",
 "price": 390000
 },
 {
-"slug": "premium",
-"name": "프리미엄",
-"description": "촬영 3시간 / 원본 500컷 / 보정 70컷",
+"slug": "ALBUM",
+"name": "ALBUM",
+"description": "- 대표 작가 1인 촬영\n- 원본 사진 1000컷 이상\n- 보정본 50장\n- 원본 사진 온라인 발송\n- 돌잡이 행사 원본 영상 제공\n- 화보 앨범 (14×11인치 / 40p) ",
 "price": 620000
 }
 ]

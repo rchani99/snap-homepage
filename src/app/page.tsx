@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 import dynamic from 'next/dynamic';
 import { Phone, Mail, Instagram, MapPin } from 'lucide-react';
+import Link from 'next/link';
 
 const GalleryMasonry = dynamic(() => import('@/components/GalleryMasonry'), { ssr: false });
 
@@ -59,7 +60,7 @@ function Button({ children, href, onClick, className = '', target, rel }: Button
    페이지 컴포넌트
    =========================== */
 
-const heroImages = ['/images/hero1.jpg', '/images/hero2.jpg', '/images/hero3.jpg'];
+const heroImages = ['/images/hero1.jpg', '/images/hero2.jpg', '/images/hero3.jpg', '/images/hero4.jpg', '/images/hero5.jpg', '/images/hero6.jpg', '/images/hero7.jpg', '/images/hero8.jpg', '/images/hero9.jpg', '/images/hero10.jpg'];
 
 function Hero() {
   const [index, setIndex] = useState<number>(0);
@@ -101,22 +102,32 @@ function Footer() {
       <Container>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
-            <p className="text-lg font-semibold">KKYUM SNAP</p>
-            <p className="mt-2 text-sm text-gray-600">© 2013–2025 All rights reserved.</p>
-            <p className="mt-2 text-sm text-gray-600 flex items-center gap-2">
+            {/* 로고 이미지 */}
+          <Link href="/" className="flex items-center gap-2">
+            <Image
+              src="/images/kk_logo.png"
+              alt="Snap Studio Logo"
+              width={50} // 로고 크기 조정
+              height={50}
+              priority
+              className="h-auto w-auto object-contain"
+            />
+          </Link>
+            <p className="mt-2 text-sm ">© 2013–2025 All rights reserved.</p>
+            <p className="mt-2 text-sm  flex items-center gap-2">
               <MapPin className="h-4 w-4" /> 서울특별시 ○○구 ○○로 123
             </p>
           </div>
           <div>
             <p className="text-sm font-medium">Navigation</p>
-            <ul className="mt-3 space-y-2 text-sm text-gray-600">
+            <ul className="mt-3 space-y-2 text-sm ">
               <li>
-                <a href="#portfolio" className="hover:text-black">
+                <a href="#portfolio" className="hover:opacity-70 transition-colors">
                   포트폴리오
                 </a>
               </li>
               <li>
-                <a href="#services" className="hover:text-black">
+                <a href="#services" className="hover:opacity-70 transition-colors">
                   상품 안내
                 </a>
               </li>
@@ -124,7 +135,7 @@ function Footer() {
           </div>
           <div>
             <p className="text-sm font-medium">Contact</p>
-            <ul className="mt-3 space-y-2 text-sm text-gray-600">
+            <ul className="mt-3 space-y-2 text-sm ">
               <li className="flex items-center gap-2">
                 <Phone className="h-4 w-4" /> 010-0000-0000
               </li>
@@ -144,7 +155,7 @@ function Footer() {
 
 export default function Page() {
   return (
-    <div className="font-[ui-sans-serif] antialiased text-gray-900">
+    <div className="antialiased">
       <Hero />
       {/* Masonry Gallery (limit 100) */}
       <section className="pt-6 pb-8">
