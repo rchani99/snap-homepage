@@ -113,21 +113,21 @@ function Footer() {
               className="h-auto w-auto object-contain"
             />
           </Link>
-            <p className="mt-2 text-sm ">© 2013–2025 All rights reserved.</p>
-            <p className="mt-2 text-sm  flex items-center gap-2">
+            <p className="mt-2 text-sm ">© 2024–2025 All rights reserved.</p>
+            {/* <p className="mt-2 text-sm  flex items-center gap-2">
               <MapPin className="h-4 w-4" /> 서울특별시 ○○구 ○○로 123
-            </p>
+            </p> */}
           </div>
           <div>
             <p className="text-sm font-medium">Navigation</p>
             <ul className="mt-3 space-y-2 text-sm ">
               <li>
-                <a href="#portfolio" className="hover:opacity-70 transition-colors">
+                <a href="/portfolio" className="hover:opacity-70 transition-colors">
                   포트폴리오
                 </a>
               </li>
               <li>
-                <a href="#services" className="hover:opacity-70 transition-colors">
+                <a href="/services" className="hover:opacity-70 transition-colors">
                   상품 안내
                 </a>
               </li>
@@ -137,13 +137,13 @@ function Footer() {
             <p className="text-sm font-medium">Contact</p>
             <ul className="mt-3 space-y-2 text-sm ">
               <li className="flex items-center gap-2">
-                <Phone className="h-4 w-4" /> 010-0000-0000
+                <Phone className="h-4 w-4" /> 010-5662-0846
               </li>
               <li className="flex items-center gap-2">
-                <Mail className="h-4 w-4" /> hello@snapstudio.kr
+                <Mail className="h-4 w-4" /> kkyumsnap@naver.com
               </li>
               <li className="flex items-center gap-2">
-                <Instagram className="h-4 w-4" /> @snapstudio
+                <Instagram className="h-4 w-4" /> @kkyumsnap_baby
               </li>
             </ul>
           </div>
