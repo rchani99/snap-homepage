@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import Container from '@/components/ui/Container';
 import portfolioData from '@/data/portfolio.json';
+import GalleryMasonry from '@/components/GalleryMasonry';
 
 type ImageItem = {
   src: string;
@@ -15,40 +16,26 @@ type Params = {
   params: { slug: string };
 };
 
-export default function OutdoorPage({ params }: Params) {
-  const slug = params?.slug ?? 'outdoor';
-  const category = portfolioData.categories.find((c) => c.slug === slug);
-
-  if (!category) return notFound();
-
-  const images = (portfolioData.gallery as ImageItem[]).filter((g) => g.category === slug);
-
+export default function OutdoorPage() {
   return (
     <main>
-      <section className="py-16">
+      <section className="pt-16 pb-10 bg-white">
         <Container>
-          <div className="mb-8">
-            <h1 className="text-3xl font-semibold">{category.title}</h1>
-            <p className="mt-2 text-gray-600">{category.subtitle}</p>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {images.map((img, i) => (
-              <div key={i} className="rounded-2xl overflow-hidden shadow">
-                <div className="relative aspect-[3/4] w-full">
-                  <Image
-                    src={img.src}
-                    alt={img.alt ?? `${category.title}-${i}`}
-                    fill
-                    sizes="(max-width:640px) 100vw, (max-width:1024px) 50vw, 33vw"
-                    className="object-cover"
-                  />
-                </div>
-              </div>
-            ))}
+          <div className="mb-6 text-center">
+            <h1 className="text-3xl md:text-4xl font-extrabold text-[#4c3126]">
+              야외스냅 포트폴리오
+            </h1>
+            <p className="mt-3 text-sm md:text-base text-[#4c3126]/80">
+              계절과 장소의 분위기를 그대로 담은 야외스냅 사진들입니다.
+            </p>
           </div>
         </Container>
+
+        <section className="pb-16">
+          <GalleryMasonry category="outdoor" limit={100} />
+        </section>
       </section>
     </main>
   );
 }
+

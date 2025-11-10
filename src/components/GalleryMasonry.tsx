@@ -1,9 +1,10 @@
+// src/components/GalleryMasonry.tsx
 'use client';
 
 import React, { useMemo } from 'react';
 import { motion } from 'framer-motion';
 import { PhotoProvider, PhotoView } from 'react-photo-view';
-import 'react-photo-view/dist/react-photo-view.css'; // 스타일 임포트
+import 'react-photo-view/dist/react-photo-view.css';
 import portfolioData from '@/data/portfolio.json';
 
 // 타입
@@ -19,18 +20,27 @@ function shuffle<T>(arr: T[]): T[] {
   return a;
 }
 
-export default function GalleryMasonry({ limit = 100 }: { limit?: number }) {
+type GalleryMasonryProps = {
+  limit?: number;
+  category?: string; // ✅ 추가: 돌스냅 / 야외스냅 필터용
+};
+
+export default function GalleryMasonry({ limit = 100, category }: GalleryMasonryProps) {
   const images = (portfolioData.gallery as Img[]) ?? [];
 
-  // 1) 랜덤 배치: 첫 렌더 시 셔플
-  const randomized = useMemo(() => shuffle(images).slice(0, limit), [images, limit]);
+  // ✅ category가 있으면 필터 후 셔플, 없으면 전체 셔플
+  const randomized = useMemo(() => {
+    let base = images;
+    if (category) {
+      base = base.filter((img) => img.category === category);
+    }
+    return shuffle(base).slice(0, limit);
+  }, [images, category, limit]);
 
   return (
     <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-      {/* PhotoProvider: 라이트박스 컨텍스트 */}
       <PhotoProvider
-        // 라이트박스 옵션 (화살표 네비/스와이프/닫기 기본 제공)
-        maskOpacity={0.9} // 검은 배경 농도
+        maskOpacity={0.9}
         toolbarRender={({ onScale, scale, onRotate, rotate }) => (
           <div className="text-white text-sm flex items-center gap-3">
             <button onClick={() => onScale(scale + 1)}>확대+</button>
@@ -43,7 +53,8 @@ export default function GalleryMasonry({ limit = 100 }: { limit?: number }) {
         <div className="columns-2 sm:columns-3 lg:columns-4 xl:columns-5 gap-3">
           {randomized.map((img, i) => {
             const ratioPadding =
-              img.w && img.h ? `${(img.h / img.w) * 100}%` : '150%'; // 크기 정보 없으면 대략 세로형
+              img.w && img.h ? `${(img.h / img.w) * 100}%` : '150%';
+
             return (
               <motion.div
                 key={`${img.src}-${i}`}
@@ -54,10 +65,10 @@ export default function GalleryMasonry({ limit = 100 }: { limit?: number }) {
                 transition={{ duration: 0.45, ease: 'easeOut' }}
               >
                 <PhotoView src={img.src}>
-                  {/* 비율 스페이서 + 자연스러운 높이 */}
-                  <div className="relative w-full bg-gray-100" style={{ paddingTop: ratioPadding }}>
-                    {/* next/image 대신 본래 높이를 자연스럽게 쓰고 싶으면 <img>가 가장 간단 */}
-                    {/* 성능 최적화를 원하면 next/image 사용 + width/height 지정으로 교체 가능 */}
+                  <div
+                    className="relative w-full bg-gray-100"
+                    style={{ paddingTop: ratioPadding }}
+                  >
                     <img
                       src={img.src}
                       alt={img.alt || `img-${i}`}
