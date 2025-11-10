@@ -15,8 +15,43 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "KK",
-  description: "스냅 스튜디오",
+  title: "뀨엠스냅 | 서울 경기 돌스냅 · 야외스냅 전문 감성스냅",
+  description:
+    "서울, 경기 전지역 돌스냅 · 야외스냅 전문 감성 스냅촬영. 자연스러운 감정과 빛을 담은 사진, 대표 작가 1:1 진행.",
+  keywords: [
+    "뀨엠스냅",
+    "돌스냅",
+    "야외스냅",
+    "서울스냅",
+    "경기스냅",
+    "감성스냅",
+    "가족사진",
+    "스냅사진",
+  ],
+  openGraph: {
+    title: "뀨엠스냅 | 서울 경기 돌스냅 · 야외스냅 전문 감성스냅",
+    description:
+      "대표 작가가 직접 진행하는 서울/경기 돌스냅 · 야외스냅 촬영. 감성적인 색감과 자연스러운 순간을 담습니다.",
+    url: "https://snap-homepage-six.vercel.app",
+    siteName: "뀨엠스냅",
+    images: [
+      {
+        url: "/og-image.png", // ✅ /public/og-image.png 준비 필요
+        width: 1200,
+        height: 630,
+        alt: "뀨엠스냅 감성스냅 대표사진",
+      },
+    ],
+    locale: "ko_KR",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "뀨엠스냅 | 돌스냅 · 야외스냅 전문 감성스냅",
+    description: "서울/경기 돌스냅, 야외스냅 전문 감성 스냅사진",
+    images: ["/og-image.png"],
+  },
+  metadataBase: new URL("https://snap-homepage-six.vercel.app"),
 };
 
 export default function RootLayout({
