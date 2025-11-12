@@ -40,7 +40,7 @@ export default function Hero() {
               priority={i === 0}
               fetchPriority={i === 0 ? 'high' : 'auto'}
               sizes="100vw"
-              className="object-contain sm:object-cover object-center"
+              className="object-cover sm:object-cover object-center"
               // 사진별 초점 미세 조정이 필요하면 아래 라인을 각 index 별로 커스터마이즈:
               // style={{ objectPosition: i === 0 ? 'center 20%' : 'center' }}
             />
