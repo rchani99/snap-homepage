@@ -6,6 +6,7 @@ import { motion } from 'framer-motion';
 import dynamic from 'next/dynamic';
 import { Phone, Mail, Instagram, MapPin } from 'lucide-react';
 import Link from 'next/link';
+import Hero from '@/components/Hero';
 
 const GalleryMasonry = dynamic(() => import('@/components/GalleryMasonry'), { ssr: false });
 
@@ -60,41 +61,61 @@ function Button({ children, href, onClick, className = '', target, rel }: Button
    페이지 컴포넌트
    =========================== */
 
-const heroImages = ['/images/hero1.jpg', '/images/hero2.jpg', '/images/hero3.jpg', '/images/hero4.jpg', '/images/hero5.jpg', '/images/hero6.jpg', '/images/hero7.jpg', '/images/hero8.jpg', '/images/hero9.jpg', '/images/hero10.jpg'];
+// const heroImages = ['/images/hero1.jpg', '/images/hero2.jpg', '/images/hero3.jpg', '/images/hero4.jpg', '/images/hero5.jpg', '/images/hero6.jpg', '/images/hero7.jpg', '/images/hero8.jpg', '/images/hero9.jpg', '/images/hero10.jpg'];
+// function Hero() {
+//   const [index, setIndex] = useState<number>(0);
 
-function Hero() {
-  const [index, setIndex] = useState<number>(0);
-  useEffect(() => {
-    const id = setInterval(() => setIndex((i) => (i + 1) % heroImages.length), 4000);
-    return () => clearInterval(id);
-  }, []);
+//   useEffect(() => {
+//     const id = setInterval(() => setIndex((i) => (i + 1) % heroImages.length), 4000);
+//     return () => clearInterval(id);
+//   }, []);
 
-  return (
-    // <section className="relative h-[60vh] sm:h-[70vh] md:h-[85vh] w-full overflow-hidden">
-      <section className="relative h-[80vh] sm:h-[85vh] md:h-[90vh] overflow-hidden">
+//   // ✅ 모바일은 contain, 태블릿 이상은 cover + 상단 초점
+//   const imgClass =
+//     'object-contain sm:object-cover object-[center_top]';
 
-      {heroImages.map((src, i) => (
-        <motion.div
-          key={i}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: index === i ? 1 : 0 }}
-          transition={{ duration: 1.1, ease: 'easeInOut' }}
-          className="absolute inset-0"
-        >
-          <Image src={src} alt={`Hero ${i}`} fill priority={i === 0} fetchPriority={i === 0 ? 'high' : 'auto'} sizes="100vw" className="object-cover" />
-        </motion.div>
-      ))}
+//   return (
+//     <section className="relative h-[80vh] sm:h-[85vh] md:h-[90vh] overflow-hidden bg-[#fdfaf7]">
+//       {heroImages.map((src, i) => (
+//         <motion.div
+//           key={i}
+//           initial={{ opacity: 0 }}
+//           animate={{ opacity: index === i ? 1 : 0 }}
+//           transition={{ duration: 1.1, ease: 'easeInOut' }}
+//           className="absolute inset-0"
+//         >
+//           <Image
+//             src={src}
+//             alt={`Hero ${i}`}
+//             fill
+//             priority={i === 0}
+//             fetchPriority={i === 0 ? 'high' : 'auto'}
+//             sizes="100vw"
+//             className={imgClass}
+//             // contain일 때 좌우 여백이 보일 수 있으니 배경색이 받쳐줌 (섹션 bg)
+//             // 필요하면 이미지별 초점을 개별로 줄 수도 있음: style={{ objectPosition: 'center 20%' }}
+//           />
+//         </motion.div>
+//       ))}
 
-      <div className="absolute inset-0 bg-black/30" />
-      <Container className="relative h-full">
-        <div className="flex h-full flex-col items-start justify-end pb-14 md:pb-24">
-          <motion.div initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: 0.2 }} className="max-w-2xl text-white">
-          </motion.div>
-        </div>
-      </Container>
-    </section>
-  );
-}
+//       {/* 어두운 오버레이 (가독성 유지) */}
+//       <div className="absolute inset-0 bg-black/30" />
+
+//       <Container className="relative h-full">
+//         <div className="flex h-full flex-col items-start justify-end pb-14 md:pb-24">
+//           <motion.div
+//             initial={{ y: 20, opacity: 0 }}
+//             animate={{ y: 0, opacity: 1 }}
+//             transition={{ delay: 0.2 }}
+//             className="max-w-2xl text-white"
+//           >
+//             {/* Hero 텍스트가 필요 없으면 비워두기 */}
+//           </motion.div>
+//         </div>
+//       </Container>
+//     </section>
+//   );
+// }
 
 function Footer() {
   return (
