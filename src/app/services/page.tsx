@@ -8,64 +8,6 @@ import services from '@/data/services.json';
 export default function ServicesPage() {
   return (
     <main>
-      {/* 상단: 텍스트 + 오른쪽 이미지 섹션 */}
-      <section className="py-16 bg-[#fdfaf7]">
-        <Container>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-            {/* 왼쪽: 대주제 + 부주제 + 설명 */}
-            <div>
-              {/* 대주제 (브랜드 컬러, 크고 진하게) */}
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#4c3126] tracking-tight">
-                소중한 순간을<br className="hidden sm:block" />
-                가장 자연스럽게 담는 스냅
-              </h1>
-
-              {/* 부주제 (굵게만 표시된 텍스트) */}
-              <h2 className="mt-4 text-xl md:text-2xl font-semibold text-[#4c3126]">
-                돌스냅 · 야외스냅 · 패밀리 · 커플 촬영까지
-              </h2>
-
-              {/* 설명문 */}
-              <p className="mt-5 text-base md:text-lg text-[#4c3126]/80 leading-relaxed">
-                인위적인 포즈보다는, 자연스럽게 웃고 바라보고 뛰노는 모습을 담습니다.
-                <br />
-                촬영 시간 동안은 카메라를 의식하기보다,
-                <span className="font-semibold"> 함께 있는 그 순간에만 집중</span>하실 수 있도록
-                편안한 분위기를 만들어 드립니다.
-                <br />
-                <br />
-                날짜, 장소, 컨셉에 따라 다양한 패키지를 선택하실 수 있어요.
-              </p>
-            </div>
-
-            {/* 오른쪽: 대표 이미지 (또는 콜라주) */}
-            <div className="relative w-full max-w-md md:max-w-lg mx-auto">
-              {/* 메인 이미지 */}
-              <div className="relative w-full aspect-[4/5] md:aspect-[3/4] rounded-3xl overflow-hidden shadow-lg">
-                <Image
-                  src="/images/d1.jpg" // 👉 여기 이미지 파일만 네 사진으로 교체
-                  alt="스냅 촬영 샘플 이미지"
-                  fill
-                  sizes="(max-width:768px) 100vw, 50vw"
-                  className="object-cover"
-                  priority
-                />
-              </div>
-
-              {/* 보조 이미지 (작게 겹치게 배치하고 싶다면) */}
-              <div className="hidden sm:block absolute -bottom-6 -left-6 w-32 h-32 md:w-40 md:h-40 rounded-2xl overflow-hidden shadow-md border border-white/70 bg-white">
-                <Image
-                  src="/images/o1.jpg" // 👉 서브 이미지도 바꿔주면 좋아
-                  alt="촬영 현장 디테일"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-            </div>
-          </div>
-        </Container>
-      </section>
-
       {/* 하단: 실제 상품 카드 그리드 */}
       <section className="py-16 bg-white">
         <Container>
