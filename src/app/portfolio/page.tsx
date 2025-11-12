@@ -13,50 +13,51 @@ export default function PortfolioPage() {
       <section className="py-16">
         <Container>
           <div className="mb-8 text-center">
-            <h1 className="text-3xl font-semibold">포트폴리오</h1>
-            <p className="mt-2 ">촬영 카테고리를 선택하세요.</p>
+            <h1 className="text-3xl font-semibold text-[#4c3126]">포트폴리오</h1>
+            <p className="mt-2 text-[#4c3126]/80">촬영 카테고리를 선택하세요.</p>
           </div>
 
-          {/* flex 중앙 정렬 */}
-          <div className="flex flex-wrap justify-center gap-8">
-            {portfolioData.categories.map((c, i) => (
-              <motion.div
-                key={c.slug}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: '0px 0px -50px 0px' }}
-                transition={{ duration: 0.4, delay: i * 0.08, ease: 'easeOut' }}
-              >
+          {/* ✅ 가운데 정렬 + 2개 카드 동일 크기 */}
+          <div className="max-w-2xl mx-auto">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 justify-items-center">
+              {portfolioData.categories.map((c) => (
                 <Link
+                  key={c.slug}
                   href={`/portfolio/${c.slug}`}
                   className="
-                    group block overflow-hidden rounded-2xl shadow
-                    max-w-[280px] w-full sm:w-[260px] md:w-[240px]
-                    min-h-[340px] flex flex-col justify-between bg-white
-                    transition-all duration-300 ease-out
-                    hover:-translate-y-1 hover:shadow-xl
+                    group w-full max-w-[340px]
+                    overflow-hidden rounded-2xl shadow border border-[#4c3126]/10 bg-white
+                    flex flex-col
                   "
                 >
-                  {/* 이미지 영역 */}
-                  <div className="relative h-48 w-full">
+                  {/* ✅ 커버 비율 통일 */}
+                  <div className="relative w-full aspect-[4/3]">
                     <Image
                       src={c.cover}
                       alt={c.title}
                       fill
                       sizes="(max-width:640px) 100vw, 33vw"
                       className="object-cover transition-transform duration-300 group-hover:scale-105"
+                      priority={false}
                     />
                   </div>
 
-                  {/* 텍스트 영역 */}
-                  <div className="p-4 text-center flex flex-col flex-grow justify-center">
-                    <h3 className="text-lg font-semibold">{c.title}</h3>
-                    <p className="text-text-gray-600">{c.subtitle}</p>
+                  {/* ✅ 텍스트 영역 균일화 */}
+                  <div className="p-4 text-center text-[#4c3126]">
+                    <h3 className="text-base sm:text-lg font-semibold">{c.title}</h3>
+                    {c.subtitle && (
+                      <p className="mt-1 text-xs sm:text-sm text-[#4c3126]/70 line-clamp-1">
+                        {c.subtitle}
+                      </p>
+                    )}
                   </div>
                 </Link>
-              </motion.div>
-            ))}
+              ))}
+            </div>
           </div>
+
+
+
         </Container>
       </section>
     </main>
