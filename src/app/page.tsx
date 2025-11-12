@@ -16,7 +16,7 @@ const GalleryMasonry = dynamic(() => import('@/components/GalleryMasonry'), { ss
 
 /* 카카오 채널 URL — 배포 시 환경변수로 교체 권장 */
 const KAKAO_CHANNEL_CHAT_URL =
-  process.env.NEXT_PUBLIC_KAKAO_URL || 'https://pf.kakao.com/_yourChannelId/chat';
+  process.env.NEXT_PUBLIC_KAKAO_URL || 'http://pf.kakao.com/_vHxiMG';
 
 /* ===========================
    공용 컴포넌트 타입 정의
@@ -106,13 +106,15 @@ function Footer() {
           <Link href="/" className="flex items-center gap-2">
             <Image
               src="/images/kk_logo.png"
-              alt="Snap Studio Logo"
-              width={50} // 로고 크기 조정
-              height={50}
+              alt="KKYUM SNAP Logo"
+              width={120} // Next 최적화용 베이스 값 (무시되지 않음)
+              height={120}
               priority
-              className="h-auto w-auto object-contain"
+              sizes="(max-width:640px) 32px, (max-width:1024px) 40px, 48px"
+              className="h-8 sm:h-9 md:h-10 w-auto object-contain"
             />
           </Link>
+
             <p className="mt-2 text-sm ">© 2024–2025 All rights reserved.</p>
             {/* <p className="mt-2 text-sm  flex items-center gap-2">
               <MapPin className="h-4 w-4" /> 서울특별시 ○○구 ○○로 123

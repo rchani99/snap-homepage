@@ -7,7 +7,7 @@ import Container from './ui/Container';
 import Image from 'next/image';
 
 const KAKAO_CHANNEL_CHAT_URL =
-  process.env.NEXT_PUBLIC_KAKAO_URL || 'https://pf.kakao.com/_yourChannelId/chat';
+  process.env.NEXT_PUBLIC_KAKAO_URL || 'http://pf.kakao.com/_vHxiMG';
 
 export default function Header() {
   const [open, setOpen] = useState(false);
@@ -38,13 +38,13 @@ export default function Header() {
             <Image
               src="/images/kk_logo.png"
               alt="KKYUM SNAP Logo"
-              width={50}
-              height={50}
+              width={120} // Next 최적화용 베이스 값 (무시되지 않음)
+              height={120}
               priority
-              className="h-auto w-auto object-contain"
+              sizes="(max-width:640px) 32px, (max-width:1024px) 40px, 48px"
+              className="h-8 sm:h-9 md:h-10 w-auto object-contain"
             />
           </Link>
-
           <nav className="hidden md:flex items-center gap-6 text-sm">
             {nav.map((n) => (
               <Link
